@@ -1,0 +1,19 @@
+1. Download git repository
+2. Build docker image inside server 
+Write dockerfile first
+3. Push docker image to docker hub
+4. Docker pull stackupiss northwind db image
+docker pull stackupiss/northwind-db:v1
+5. Create docker network mynet 
+docker network create mynet
+6. Create a volume myvol for the database
+docker volume create myvol
+7. Run the docker images with the parameters --network=mynet
+docker run -d -v /root/mysql:/var/lib/mysql --network=mynet --name=mydb stackupiss/northwind-db:v
+8. See the db logs
+docker logs mydb
+9. Run the docker image
+docker run -d -p 80 --network=mynet --name --volume=/var/lib/myvol myapp myapp:v1 
+10. Head to localhost:80 on a browser to verify
+
+
