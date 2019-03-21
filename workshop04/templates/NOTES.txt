@@ -1,0 +1,4 @@
+Access this application using 
+port-forward locally.
+
+Because the service is not exposed to public. (ClusterIP)
